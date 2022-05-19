@@ -27,7 +27,7 @@ export default function ReposContainer() {
         method: "get",
         url: `https://api.github.com/repos/${username}/${selectedRepo.name}`,
         headers: {
-          Authorization: "Bearer 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",
+          Authorization: "Bearer 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",
         },
       });
       dispatch(setCurrentRepo(resp.data));
@@ -35,7 +35,7 @@ export default function ReposContainer() {
         method: 'get',
         url: `https://api.github.com/repos/${username}/${selectedRepo.name}/branches`,
         headers: {
-          Authorization: "Bearer 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",
+          Authorization: "Bearer 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",
         },
       })
       dispatch(setBranches(listBranches.data));
@@ -52,7 +52,7 @@ export default function ReposContainer() {
         method: 'get',
         url: `https://api.github.com/repos/${username}/${selectedRepo.name}/commits/${branch.name}`,
         headers: {
-          Authorization: "Bearer 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",
+          Authorization: "Bearer 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",
         },
       });
       dispatch(setCommit(commit.data));
@@ -70,7 +70,7 @@ export default function ReposContainer() {
   } if (currentRepo) {
     return (
       <div className="repo-container">
-        {username && (
+        {selectedRepo.name && (
           <button className="pr-button"><Link to="/pull-request" className="button">New Pull Request</Link></button>
         )}
         <h1 className="repo-name">{selectedRepo.name}</h1>

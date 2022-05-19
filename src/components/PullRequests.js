@@ -8,22 +8,32 @@ function PullRequests() {
   const username = useSelector((state) => state.username.value);
 
   useEffect(() => {
+    getPullRequests();
+  }, [])
+
+  async function getPullRequests() {
     try {
       setLoading(true);
-      const list = axios({
+      const list = await axios({
         method: 'get',
         url: `https://api.github.com/repos/${username}/${selectedRepo.name}/pulls`,
         headers: {
-          Authorization: "Bearer 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",
+          Authorization: "Bearer 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",
         },
       })
-      console.log(list);
+      console.log(list.data);
       setLoading(false);
-      console.log("hola");
     } catch (error) {
       console.log(error);
     }
-  })
+  }
+
+
+  if(loading) {
+    return (
+      <h1>Loading List...</h1>
+    )
+  }
 
   return <div className="list-container">lksdncsdncjndcldsnclkdnscl</div>;
 }

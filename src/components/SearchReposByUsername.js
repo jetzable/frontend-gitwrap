@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from 'react-redux';
 import { listRepos } from "../features/repos";
 import { currentUsername } from "../features/username";
-import selectedRepo, { setSelectedRepo } from "../features/selectedRepo";
+import { setSelectedRepo } from '../features/selectedRepo';
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 
@@ -15,6 +15,7 @@ export default function SearchReposByUsername() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const searchResults = useSelector((state) => state.repos.value)
+  const selectedRepo = useSelector((state) => state.selectedRepo.value)
 
   async function searchRepos(e) {
       try {
@@ -24,7 +25,7 @@ export default function SearchReposByUsername() {
           method: "get",
           url: `https://api.github.com/users/${username}/repos`,
           headers: {
-            'Authorization': 'Bearer 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'
+            'Authorization': 'Bearer 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'
           }
         });
         dispatch(listRepos(data.data));
@@ -74,7 +75,7 @@ export default function SearchReposByUsername() {
           ))}
         </ul>
       </form>
-      {username && (
+      {selectedRepo.name && (
       <div className="pull-requests-list-container">
         <button className="pull-requests-button" onClick={() => navigate('/pull-requests')}>Pull requests</button>
       </div>)}

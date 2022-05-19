@@ -35,7 +35,7 @@ function PullRequest() {
         method: 'get',
         url: `https://api.github.com/repos/${username}/${selectedRepo.name}/compare/${baseBranch}...${compareBranch}`,
         headers: {
-          'Authorization': 'Bearer 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'
+          'Authorization': 'Bearer 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'
         }
       })
       setPullRequest(comparison.data)
@@ -69,7 +69,7 @@ function PullRequest() {
         method: 'post',
         url: `https://api.github.com/repos/${username}/${selectedRepo.name}/pulls`,
         headers: {
-          'Authorization': 'Bearer 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'
+          'Authorization': 'Bearer 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'
         },
         data: {
           owner: username,
