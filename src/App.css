@@ -1,38 +1,277 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*, body {
+  margin: 0;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  width: 100%;
+  height: 100vh;
+  margin-top: 5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-bar {
+  width: 100%;
+  height: 3rem;
+  background: #242A2F;
+  color: #fff;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.github-brand {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  max-width: 70%;
+  margin: auto;
+}
+
+.github-brand span {
+  margin-left: 0.5rem;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.form input {
+  height: 1.5rem;
+  width: 100%;
+  background: #242A2F;
+  color: #fff;
+  margin-right: 0.5rem;
+  border: 1px solid #fff;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.5rem;
+}
+
+.form button {
+  height: 2rem;
+  border-radius: 0.75rem;
+  background: #2DA44E;
+  color: #fff;
+  border: none;
+  outline: none;
+}
+
+.repos {
+  position: absolute;
+  top: 1rem;
+  background: #fff;
+  border-radius: 0.5rem;
+  color: #242A2F;
+  width: 70%;
+  padding: 0;
+  box-shadow: 2px 4px 12px -1px rgba(0,0,0,0.69);
+  -webkit-box-shadow: 2px 4px 12px -1px rgba(0,0,0,0.69);
+  -moz-box-shadow: 2px 4px 12px -1px rgba(0,0,0,0.69);
+  max-height: 25rem;
+  overflow: scroll;
+}
+
+.repo-item {
+  list-style: none;
+  padding: 0.25rem 2rem;
+  text-align: justify;
+  cursor: pointer;
+}
+
+.repo-item:hover {
+  background-color: #575858;
+  color: #fff;
+}
+
+.repo-container {
+  height: 100vh;
+  padding: 2rem;
+  margin-top: 3rem;
+  position: relative;
+}
+
+.branches-list {
+  list-style: circle;
+  font-size: 1.125rem;
+}
+
+.branches-title {
+  font-size: 1.5rem;
+  margin-left: 00.25rem;
+}
+
+.commit-container {
+  background: #fff;
+  border: 2px solid #242A2F;
+  border-radius: 0.5rem;
+  margin: 1rem;
+}
+
+.commit-header {
+  background: #575858;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1.5rem;
+}
+
+.commit-header-info {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.commit-label {
+  font-weight: 800;
+  margin-right: 0.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.commit-body {
+  padding: 0 1.5rem 2rem;
+}
+
+.commit-message, .commit-author {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.commit-author p {
+  display: flex;
+  align-items: center;
+}
+
+.commit-author img {
+  height: 2rem;
+  width: 2rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.file-info {
+  display: grid;
+  grid-template-columns: repeat(3, 10rem);
+  padding: 0.5rem 0;
+}
+
+.commit-files {
+  max-height: 12rem;
+  overflow: scroll;
+}
+
+.repo-name {
+  font-size: 1.75rem;
+  text-decoration: underline;
+  margin-bottom: 2rem;
+}
+
+.pr-button {
+  border-radius: 0.5rem;
+  background: #2DA44E;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  height: 2.5rem;
+  max-width: 10rem;
+  position: absolute;
+  top: 0;
+  right: 1rem;
+}
+
+.pr-button a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.compare-branches {
+  display: grid;
+  grid-template-columns: 6fr 6fr;
+  margin-bottom: 2rem;
+}
+
+.pull-container {
+  padding: 0 4rem;
+}
+
+.pull-container h1 {
+  font-size: 1.75rem;
+  text-decoration: underline;
+  margin: 2rem;
+}
+
+.pull-resume {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  border: 1px solid #999898;
+}
+
+.fa-solid {
+  margin-right: 0.5rem;
+}
+
+.merge-footer, .pull-files {
+  padding: 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid #999898;
+  margin-top: 1rem;
+}
+
+.file-container {
+  display: grid;
+  grid-template-columns: 8fr 2fr 2fr;
+}
+
+.merge-footer {
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  align-items: center;
+}
+
+.merge-button {
+  border-radius: 0.5rem;
+  background: #2DA44E;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  height: 2.5rem;
+}
+
+.pull-requests-button {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+}
+
+.pull-requests-list-container {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-right: 3rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.pull-requests-button:hover {
+  color: #2DA44E;
+}
+
+.list-container {
+  margin-top: 3rem;
 }
