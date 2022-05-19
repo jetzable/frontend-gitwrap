@@ -1,3 +1,25 @@
+# Frontend Git Wrapper
+
+A visual representation of the git history of your repo as a JS web-app.
+
+In this application you're going to be able to:
+* Get the list of repositories from an specific Github username, using a search bar.
+* By selecting a repository you can visualize a list of the branches
+* Select a branch and you'll see the last commit message, the date stamp, the name,  avatar and email from the author, also a list of the files with the count of additions and deletions for each one.
+* A button to create a new pull request for that repository
+* In the /pull-request route you'll be able to select your base and compare branch. This will show he commits involve in the comparison and the number of files modified. You'll be able to add a Pull request title and Create it.
+* Once you select a repository you'll find a link to /pull-requests view that will list the pull requests from the selected repository.
+* Merge the open pull requests by clicking the merge button.
+
+
+# Before start
+
+You'll need to create and add a github personal access token required for the github api requests.
+Create your .env.local 
+REACT_APP_PERSONAL_ACCESS_TOKEN={Your Github personal access token}
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
