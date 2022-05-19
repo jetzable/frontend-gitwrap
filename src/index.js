@@ -14,6 +14,7 @@ import branchesReducer from './features/branches';
 import branchReducer from './features/branch';
 import commitReducer from './features/commit';
 
+
 // Global state
 const store = configureStore({
   reducer: {

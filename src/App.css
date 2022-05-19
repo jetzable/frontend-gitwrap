@@ -274,4 +274,26 @@
 
 .list-container {
   margin-top: 3rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.list-container h1 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.list-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-decoration: underline;
+}
+
+.pull-request-item {
+  border: 1px solid #999898;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  width: 70%;
 }
