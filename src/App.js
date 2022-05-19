@@ -9,7 +9,6 @@ import { useSelector } from 'react-redux'
 function App() {
   const username = useSelector((state) => state.username.value);
   const selectedRepo = useSelector((state) => state.selectedRepo.value);
-
   return (
     <div className="container">
       <SearchReposByUsername />

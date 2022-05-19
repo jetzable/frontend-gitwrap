@@ -27,7 +27,7 @@ export default function ReposContainer() {
         method: "get",
         url: `https://api.github.com/repos/${username}/${selectedRepo.name}`,
         headers: {
-          Authorization: "Bearer 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",
+          Authorization: 'Bearer' + process.env.REACT_APP_PERSONAL_ACCESS_TOKEN,
         },
       });
       dispatch(setCurrentRepo(resp.data));
@@ -35,7 +35,7 @@ export default function ReposContainer() {
         method: 'get',
         url: `https://api.github.com/repos/${username}/${selectedRepo.name}/branches`,
         headers: {
-          Authorization: "Bearer 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",
+          Authorization: 'Bearer' + process.env.REACT_APP_PERSONAL_ACCESS_TOKEN,
         },
       })
       dispatch(setBranches(listBranches.data));
@@ -52,7 +52,7 @@ export default function ReposContainer() {
         method: 'get',
         url: `https://api.github.com/repos/${username}/${selectedRepo.name}/commits/${branch.name}`,
         headers: {
-          Authorization: "Bearer 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",
+          Authorization: 'Bearer' + process.env.REACT_APP_PERSONAL_ACCESS_TOKEN,
         },
       });
       dispatch(setCommit(commit.data));
